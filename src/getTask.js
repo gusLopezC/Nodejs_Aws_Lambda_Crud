@@ -13,15 +13,14 @@ const getTask = async (event) => {
       },
     })
     .promise();
+
+  const task = result.Items;
+
+  return {
+    status: 200,
+    body: JSON.stringify(task),
+  };
 };
-
-const task = result.Items;
-
-return {
-  status: 200,
-  body: JSON.stringify(task),
-};
-
 module.exports = {
   getTask,
 };
